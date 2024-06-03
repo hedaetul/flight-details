@@ -1,113 +1,96 @@
-import Image from "next/image";
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import { FaArrowRightArrowLeft } from 'react-icons/fa6';
+import { MdFlightTakeoff, MdOutlineTour } from 'react-icons/md';
+import { RiArrowDropDownLine, RiHotelLine } from 'react-icons/ri';
 
-export default function Home() {
+const Page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div>
+      <div className='banner min-h-[925px]'>
+        <div className='container'>
+          <nav className='flex justify-between items-center'>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              width={20}
+              height={20}
+              src='/src/dist/images/logo.png'
+              alt='logo'
             />
-          </a>
+            <div className='flex justify-center items-center gap-4'>
+              <h3 className='text-sm font-medium text-gray-700 cursor-pointer'>
+                BDT{' '}
+                <RiArrowDropDownLine className='inline text-2xl text-gray-700' />
+              </h3>
+              <Button>Sign In</Button>
+            </div>
+          </nav>
+          <div className='flex-col-center mt-20 relative'>
+            <div className='bg-white flex px-16 py-5 rounded-md shadow-lg absolute top-[-50px]'>
+              <h2 className='text-sm font-medium mr-6 cursor-pointer'>
+                <MdFlightTakeoff className='inline text-2xl mr-1' /> Flight
+              </h2>
+              <h2 className='text-sm font-medium mr-6 cursor-pointer'>
+                <RiHotelLine className='inline text-2xl mr-1' /> Hotel
+              </h2>
+              <h2 className='text-sm font-medium cursor-pointer'>
+                <MdOutlineTour className='inline text-2xl mr-1' />
+                Tour
+              </h2>
+            </div>
+            <div className='w-full py-9 rounded-2xl bg-white'>
+              <div className='flex justify-evenly'>
+                <div className='flight-card px-3 py-1'>
+                  <h3 className='text-sm uppercase text-gray-500'>From</h3>
+                  <h2 className='text-xl font-bold'>Dhaka</h2>
+                  <p className='text-gray-500'>
+                    DAC, Hazrat Shahjalal International...
+                  </p>
+                </div>
+                <div className='flight-card px-3 py-1 relative'>
+                  <div className='w-fit rounded-full bg-white border flex-col-center p-3 absolute left-[-40px] top-[15px]'>
+                    <FaArrowRightArrowLeft className='text-2xl' />
+                  </div>
+                  <h3 className='text-sm uppercase text-gray-500'>To</h3>
+                  <h2 className='text-xl font-bold'>Cox`s Bazar</h2>
+                  <p className='text-gray-500'>CXB, Cox`s Bazar Airport</p>
+                </div>
+                <div className='flight-card w-[280px] grid grid-cols-2'>
+                  <div className='border-r-2 px-3 py-1'>
+                    <h3 className='text-sm uppercase text-gray-500'>
+                      Journey Date
+                    </h3>
+                    <h2 className='text-xl font-bold'>8 Jun 24</h2>
+                    <p className='text-gray-500'>Saturday</p>
+                  </div>
+                  <div className='px-3 py-1'>
+                    <h3 className='text-sm uppercase text-gray-500'>
+                      Return Date
+                    </h3>
+                    <p className='text-gray-500'>Save more on return flight</p>
+                  </div>
+                </div>
+                <div className='flight-card w-52 px-3 py-1'>
+                  <h3 className='text-sm uppercase text-gray-500'>
+                    Traveler Class
+                  </h3>
+                  <h2 className='text-xl font-bold'>1 Traveler</h2>
+                  <p className='text-gray-500'>Economy</p>
+                </div>
+              </div>
+              <div className='flex-row-center relative'>
+                <Button
+                  size='lg'
+                  className='bg-yellow-500 px-12 font-semibold text-white absolute bottom-[-55px]'
+                >
+                  Search
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default Page;
